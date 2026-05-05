@@ -2,6 +2,7 @@ package example
 
 import dueuno.types.Money
 import grails.gorm.multitenancy.CurrentTenant
+import grails.gorm.transactions.Transactional
 import groovy.util.logging.Slf4j
 
 import java.time.LocalDate
@@ -10,6 +11,7 @@ import java.time.LocalDate
 @CurrentTenant
 class InstallService {
 
+    @Transactional
     void install() {
         TTag fantasy = new TTag(name: 'Fantasy').save(failOnError: true)
         TTag classic = new TTag(name: 'Classic').save(failOnError: true)

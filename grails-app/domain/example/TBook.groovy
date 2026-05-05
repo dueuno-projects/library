@@ -1,10 +1,12 @@
 package example
 
 import dueuno.types.Money
+import grails.gorm.MultiTenant
+import org.grails.datastore.gorm.GormEntity
 
 import java.time.LocalDate
 
-class TBook {
+class TBook implements GormEntity, MultiTenant<TBook> {
 
     String title
     String isbn

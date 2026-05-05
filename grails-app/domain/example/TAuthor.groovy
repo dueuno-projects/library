@@ -1,6 +1,9 @@
 package example
 
-class TAuthor {
+import grails.gorm.MultiTenant
+import org.grails.datastore.gorm.GormEntity
+
+class TAuthor implements GormEntity, MultiTenant<TAuthor> {
 
     String name
     String email

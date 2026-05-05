@@ -1,6 +1,9 @@
 package example
 
-class TTag {
+import grails.gorm.MultiTenant
+import org.grails.datastore.gorm.GormEntity
+
+class TTag implements GormEntity, MultiTenant<TTag> {
 
     String name
 

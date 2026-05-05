@@ -1,6 +1,9 @@
 package example
 
-class TContactInfo {
+import grails.gorm.MultiTenant
+import org.grails.datastore.gorm.GormEntity
+
+class TContactInfo implements GormEntity, MultiTenant<TContactInfo> {
 
     String phone
     String mailingAddress
